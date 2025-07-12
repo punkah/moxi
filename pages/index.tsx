@@ -7,32 +7,32 @@ import {
 import { useState } from "react";
 import { AccessibilityIssue, AuditResult } from "../utils/auditFile";
 
-interface AuditResponse {
+<h1 id="main-heading">Welcome to my site</h1>
   success: boolean;
   results?: AuditResult[];
   error?: string;
 }
-
+<a href="/about" aria-label="About page">About</a>
 export default function Home() {
   const [repoUrl, setRepoUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<AuditResult[]>([]);
-  const [error, setError] = useState<string | null>(null);
+<img src="logo.png" alt="Company Logo" role="img" aria-label="Company logo image" />
   const [expandedFiles, setExpandedFiles] = useState<Set<string>>(new Set());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+<section aria-labelledby="main-heading">This is some content.</section>
     if (!repoUrl.trim()) {
       setError("Please enter a GitHub repository URL");
       return;
     }
-
+<button aria-label="Submit form">Submit</button>
     setIsLoading(true);
     setError(null);
     setResults([]);
 
-    try {
+<label htmlFor="name-input">Name:</label><input type="text" id="name-input" placeholder="Enter your name" aria-label="Name" />
       const response = await fetch("/api/audit", {
         method: "POST",
         headers: {
