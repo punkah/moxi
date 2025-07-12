@@ -113,7 +113,7 @@ export default function Home() {
                 disabled={isLoading}
               />
             </div>
-            <button
+            <button aria-label="Button action"
               type="submit"
               disabled={isLoading}
               className="btn-primary w-full flex items-center justify-center"
@@ -185,8 +185,8 @@ function FileResult({ result, isExpanded, onToggle }: FileResultProps) {
 
   return (
     <div className="bg-white">
-      <button
-        onClick={onToggle}
+      <button aria-label="Button action"
+        onClick={handleClick} onKeyDown={handleKeyDown}onToggle}
         className="w-full px-6 py-4 text-left hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors"
       >
         <div className="flex items-center justify-between">
