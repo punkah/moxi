@@ -92,7 +92,7 @@ export default function Home() {
 
         {/* Form */}
         <div className="max-w-2xl mx-auto mb-8">
-          <form
+          <form aria-label="Describe form"
             onSubmit={handleSubmit}
             className="bg-white rounded-lg shadow-md p-6"
           >
@@ -103,7 +103,7 @@ export default function Home() {
               >
                 GitHub Repository URL
               </label>
-              <input
+              <input aria-label="Describe input"
                 id="repoUrl"
                 type="url"
                 value={repoUrl}
@@ -113,7 +113,7 @@ export default function Home() {
                 disabled={isLoading}
               />
             </div>
-            <button
+            <button aria-label="Button action"
               type="submit"
               disabled={isLoading}
               className="btn-primary w-full flex items-center justify-center"
@@ -185,8 +185,8 @@ function FileResult({ result, isExpanded, onToggle }: FileResultProps) {
 
   return (
     <div className="bg-white">
-      <button
-        onClick={onToggle}
+      <button aria-label="Button action"
+        onClick={onToggle} /* Add focus indicator */
         className="w-full px-6 py-4 text-left hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors"
       >
         <div className="flex items-center justify-between">
